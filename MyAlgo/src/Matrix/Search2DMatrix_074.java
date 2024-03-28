@@ -22,7 +22,7 @@ public class Search2DMatrix_074 {
         while(left <= right){
             int mid = left + (right - left)/2;
             // each row have n element, division find which row , modular find the offset on that row;
-            int midVal = matrix[mid/n][mid%mid];
+            int midVal = matrix[mid/n][mid%n];
             if (midVal == target){
                 return true;
             } else if ( midVal < target) {
