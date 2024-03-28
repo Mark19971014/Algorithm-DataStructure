@@ -47,9 +47,6 @@ public class Snake_ladder_909 {
         int adjustedSquare = square - 1;
         // Calculate the row from the top to the bottom (0-indexed).
         int r = length - adjustedSquare / length - 1;
-
-        // Calculate the column. For odd rows (0-indexed), count from left to right.
-        // For even rows (0-indexed), count from right to left.
        //int c =  r % 2 != 0 ? adjustedSquare % length : length - adjustedSquare % length - 1;
         int c = (length - r) % 2 != 0 ? adjustedSquare % length : length - adjustedSquare % length - 1;
         return new int[]{r, c};
