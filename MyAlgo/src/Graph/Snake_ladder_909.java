@@ -27,7 +27,7 @@ public class Snake_ladder_909 {
                 int nextSquare = square + i;
                 int[] rowcol = intToPos(nextSquare,length);
                 int rowidx = rowcol[0], colidx = rowcol[1];
-                // if it's not a ladder or snake
+                // if it's not a ladder or snake only update square when square is not equal -1
                 if(board[rowidx][colidx] != -1){
                     nextSquare = board[rowidx][colidx];
                 }
