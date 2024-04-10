@@ -10,11 +10,13 @@ public class TreeRightSide_199 {
         if (root == null) return res;
         q.offer(root);
         while (!q.isEmpty()) {
+
+            // we must fix the size of the queue because after entering the for loop, the size of queue changed .
             int levelLength = q.size();
             for (int i = 0; i < levelLength; i++) {
                 TreeNode currentNode = q.poll();
                 if (currentNode != null) {
-                    right = currentNode; // This ensures that the rightmost node of the current level is stored
+                    right = currentNode; // keep track the right node until reach the end of queue,(queue.poll == null)
                     if (currentNode.left != null) {
                         q.offer(currentNode.left);
                     }
@@ -23,8 +25,11 @@ public class TreeRightSide_199 {
                     }
                 }
             }
+            assert right != null;
             res.add(right.val); // Add the value of the rightmost node after processing the level
         }
         return res;
     }
 }
+
+
