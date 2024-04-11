@@ -21,7 +21,7 @@ public class DeleteBSTNode_450 {
                 // replace the root with the smallest node on the right sub tree
                 root.val = minOnRight (root.right);
                 // delete the left most on the right subtree, set it reference as null, finally reach line 15 in the recursion
-                deleteNode(root.right,root.val);
+               root.right =  deleteNode(root.right,root.val);
 
             }
             return  root;
