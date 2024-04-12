@@ -21,7 +21,11 @@ public class DeleteBSTNode_450 {
                 // replace the root with the smallest node on the right sub tree
                 root.val = minOnRight (root.right);
                 // delete the left most on the right subtree, set it reference as null, finally reach line 15 in the recursion
-               root.right =  deleteNode(root.right,root.val);
+                // the assignment is necessary because I need to update the reference of the node,
+               /*By assigning this result to root.right, you're effectively saying,
+               "The right child of this node is now whatever the result of the delete operation was,"
+                which could be null (if a leaf was deleted) or a subtree (if a node with children was deleted).*/
+                root.right =  deleteNode(root.right,root.val);
 
             }
             return  root;
