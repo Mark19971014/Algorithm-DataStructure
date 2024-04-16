@@ -6,38 +6,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class LevelOrderTravseral {
+public class LevelOrderTravseral_102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-
+        List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
-        List<List<Integer>> result = new ArrayList<>();
-        queue.offer(root);
-        // while queue is not empty we can expand the treeNode in the queue.
-        while (!queue.isEmpty()) {
-            int size = queue.size();
+        queue.add(root);
+        while (!queue.isEmpty()){
             List<Integer> level = new ArrayList<>();
-            while (size != 0) {
+            int size = queue.size();
+            for(int i = 0; i < size;i++){
                 TreeNode cur = queue.poll();
-                int val = cur.val;
-                level.add(val);
-                if (cur.left != null) {
-                    queue.offer(cur.left);
-                }
-                if (cur.right != null) {
-                    queue.offer(cur.right);
-                }
-                size--;
+                level.add(cur.val);
+                if(cur.left != null) queue.add(cur.left);
+                if(cur.right != null) queue.add(cur.right);
             }
-            result.add(level);
+
+            res.add(level);
         }
-        return result;
+        return res;
     }
 
     public static void main(String[] args) {
-        LevelOrderTravseral test = new LevelOrderTravseral();
+        LevelOrderTravseral_102 test = new LevelOrderTravseral_102();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
