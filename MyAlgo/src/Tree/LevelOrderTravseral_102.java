@@ -8,6 +8,7 @@ import java.util.Queue;
 
 public class LevelOrderTravseral_102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
+        if(root == null) return new ArrayList<>();
         List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
