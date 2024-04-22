@@ -2,11 +2,12 @@ package Tree;
 
 public class PathSum_129 {
     public int sumNumbers(TreeNode root) {
-        if(root == null) return 0;
+
         return dfs(root,0);
     }
 
     private int dfs(TreeNode root, int pathSum) {
+        if(root == null) return 0;
         pathSum = pathSum * 10 + root.val;
         if(root.left == null && root.right == null) return pathSum;
 
