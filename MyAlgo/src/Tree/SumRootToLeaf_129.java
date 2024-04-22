@@ -1,6 +1,6 @@
 package Tree;
 
-public class PathSum_129 {
+public class SumRootToLeaf_129 {
     public int sumNumbers(TreeNode root) {
 
         return dfs(root,0);
@@ -15,7 +15,7 @@ public class PathSum_129 {
     }
 
     public static void main(String[] args) {
-        PathSum_129 test = new PathSum_129();
+        SumRootToLeaf_129 test = new SumRootToLeaf_129();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
