@@ -13,7 +13,7 @@ public class TreeNode {
         this.val = val;
     }
 
-    TreeNode(TreeNode left, TreeNode right, int val) {
+    TreeNode( int val,TreeNode left, TreeNode right) {
         this.left = left;
         this.right = right;
         this.val = val;
