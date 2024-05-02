@@ -8,7 +8,7 @@ public class LinkedCircle_141 {
         if (head == null || head.next == null) return false;
         ListNode slow = head;
         ListNode fast = head;
-        while(fast != null || fast.next != null){
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
             if(fast == slow){

@@ -2,7 +2,7 @@ package Array;
 
 public class RemoveDuplicateII_080 {
     // since we can have duplicated element at most twice
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicatesII(int[] nums) {
         // since we can have duplicated element at most twice
         if(nums.length <= 2) return nums.length;
         // start updating from index 2
@@ -26,7 +26,7 @@ public class RemoveDuplicateII_080 {
     public static void main(String[] args) {
         RemoveDuplicateII_080 solution = new RemoveDuplicateII_080();
         int[] test = {0,0,1,1,1,2,2,3,3,3};
-        System.out.println(solution.removeDuplicates(test));
+        System.out.println(solution.removeDuplicatesII(test));
         /*int[][] testArrays = {
                 {},
                 {1},
