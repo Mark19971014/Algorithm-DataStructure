@@ -1,6 +1,6 @@
 package Array;
 
-public class GasStation {
+public class GasStation_134 {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int totalGas = 0; // Total gas in the tank
         int currentGas = 0; // Gas in the tank at the current station
@@ -39,10 +39,28 @@ public class GasStation {
         }
     }
 
+    public int solution(int[] gas, int[] cost){
+        int index = 0;
+        int total = 0;
+        int cur = 0;
+
+        for(int i = 0 ; i <  gas.length; i++){
+            total += gas[i] - cost[i];
+            cur += gas[i]  - cost[i];
+            // if we can not move to the next station from current station; check the next station
+            if (cur < 0){
+                index = i + 1;
+                cur = 0;
+            }
+        }
+
+        return total >= 0 ? index : -1;
+    }
 public static void main(String[] args) {
-        GasStation test = new GasStation();
+        GasStation_134 test = new GasStation_134();
         int[] gas = {1,2,3,4,5};
         int[] cost = {3,4,5,1,2};
+        test.solution(gas,cost);
         //test.circularArray(gas);
         System.out.println(test.canCompleteCircuit(gas,cost));
     }
