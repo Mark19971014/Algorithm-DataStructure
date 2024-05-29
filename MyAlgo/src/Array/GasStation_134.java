@@ -56,6 +56,35 @@ public class GasStation_134 {
 
         return total >= 0 ? index : -1;
     }
+
+    public int canCompleteCircuit_circuit(int[] gas, int[] cost) {
+        int n = gas.length;
+
+        for (int start = 0; start < n; start++) {
+            int tank = 0;
+            boolean canComplete = true;
+
+            // Try to travel the circuit starting from 'start'
+            for (int i = 0; i < n; i++) {
+                int currentStation = (start + i) % n;
+                tank += gas[currentStation] - cost[currentStation];
+
+                // If tank goes negative, we can't complete the circuit from 'start'
+                if (tank < 0) {
+                    canComplete = false;
+                    break;
+                }
+            }
+
+            // If we can complete the circuit from 'start', return 'start'
+            if (canComplete) {
+                return start;
+            }
+        }
+
+        // If no starting point can complete the circuit, return -1
+        return -1;
+    }
 public static void main(String[] args) {
         GasStation_134 test = new GasStation_134();
         int[] gas = {1,2,3,4,5};
